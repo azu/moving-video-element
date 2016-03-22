@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Moving Video</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+
+        .main, .VideoContainer {
+            height: 70%;
+            width: 100%;
+        }
+
+        .main-left, .main-right {
+            height: 100%;
+            width: 50%;
+        }
+
+        .main-left {
+            background-color: #eed599;
+        }
+
+        .main-right {
+            background-color: #beeded;
+        }
+
+        .main, .VideoContainer {
+            display: flex;
+        }
+
+        .main {
+            flex-direction: column;
+        }
+
+        .main-left, .main-right {
+            align-items: center;
+        }
+
+        .main-controller {
+
+        }
+    </style>
+</head>
+<body>
+<div class="main">
+    <div class="VideoContainer">
+        <div class="main-left" id="js-left">
+            <div class="VideoWrapper">
+                <video width="320" height="240" controls autoPlay id="js-video">
+                    <source src="./videos/big-buck-bunny-trailer-480p.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+        <div class="main-right" id="js-right">
+
+        </div>
+    </div>
+    <div class="main-controller">
+        <button id="js-move-to-left-button">left</button>
+        <button id="js-move-to-right-button">right</button>
+    </div>
+</div>
+<script>
+    var leftArea = document.querySelector(".main-left");
+    var rightArea = document.querySelector(".main-right");
+    var leftButton = document.getElementById("js-move-to-left-button");
+    var rightButton = document.getElementById("js-move-to-right-button");
+    var videoWrapper = document.querySelector(".VideoWrapper");
+    var video = document.getElementById("js-video");
+
+    // https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/readyState
+    function log(prefix, video) {
+        console.log(prefix + " - readyState: " + video.readyState)
+    }
+
+    leftButton.addEventListener("click", function (event) {
+        log("before", video);
+        var videoItem = videoWrapper.parentNode.removeChild(videoWrapper);
+        leftArea.appendChild(videoItem);
+        log("after", video);
+        if (video.readyState >= 2) {
+            video.play();
+        }
+    });
+    rightButton.addEventListener("click", function (event) {
+        log("before", video);
+        var videoItem = videoWrapper.parentNode.removeChild(videoWrapper);
+        rightArea.appendChild(videoItem);
+        log("after", video);
+        if (video.readyState >= 2) {
+            video.play();
+        }
+    });
+</script>
+
+</body>
+</html>

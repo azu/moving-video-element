@@ -1,0 +1,26 @@
+{
+  "name": "moving-video-element",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azu/moving-video-element.git"
+  },
+  "author": "azu",
+  "email": "azuciao@gmail.com",
+  "homepage": "https://github.com/azu/moving-video-element",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/azu/moving-video-element/issues"
+  },
+  "version": "1.0.0",
+  "description": "move Video element to other.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "video"
+  ]
+}
