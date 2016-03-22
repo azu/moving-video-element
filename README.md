@@ -2,16 +2,13 @@
 
 Experimentation: 
 
-
 When move video element to other element, keep video's state.
 
 ## Usage
 
-- [ ] Write usage instructions
-
-## Tests
-
-- [ ] Write How to Tests
+1. Open http://azu.github.io/moving-video-element/
+2. Press "left", "right"
+3. See console.
 
 ## Contributing
 
